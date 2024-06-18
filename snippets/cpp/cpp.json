@@ -160,8 +160,8 @@
         "description": "Code snippet for interface (Visual C++)"
     },
     "namespace": {
-        "prefix": "namespace",
-        "body": ["namespace ${1:MyNamespace} {", "\t$0", "}"]
+        "prefix": "nsp",
+        "body": ["namespace ${1:MyNamespace} {", "\t$0", "} // End of namespace $1", ""]
     },
     "#ifdef": {
         "prefix": "#ifdef",
