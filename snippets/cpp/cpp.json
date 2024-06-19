@@ -406,5 +406,15 @@
 		"prefix": "EXDE",
 		"body": ["EXPECT_LE(abs(${1:value1} - ${2:value2}), ${2:1e-6});"],
 		"description": "Code snippet gtest to expect floating-point numbers equal"
+	},
+	"gtest expect no throw exception": {
+		"prefix": "EX_NT",
+		"body": ["EXPECT_NO_THROW(${1:statement});"],
+		"description": "Code snippet gtest to expect no throw exception"
+	},
+	"gtest expect throw any exception": {
+		"prefix": "EX_AT",
+		"body": ["EXPECT_ANY_THROW(${1:statement});"],
+		"description": "Code snippet gtest to expect any exception"
 	}
 }
