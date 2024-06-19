@@ -49,7 +49,7 @@
         "description": "Code snippet while loop"
     },
     "foreach": {
-        "prefix": "foreach",
+        "prefix": "fore",
         "body": [
             "for(${1:auto} ${2:var} : ${3:collection_to_loop}) {",
             "\t$0",
@@ -87,23 +87,18 @@
         "prefix": "class",
         "body": [
             "class ${1:MyClass} {",
-            "public:",
-            "\t$1();",
-            "\t$1($1 &&) = default;",
-            "\t$1(const $1 &) = default;",
-            "\t$1 &operator=($1 &&) = default;",
-            "\t$1 &operator=(const $1 &) = default;",
-            "\t~$1();",
-            "",
-            "private:",
-            "\t$2",
-            "};",
-            "",
-            "$1::$1() {",
-            "}",
-            "",
-            "$1::~$1() {",
-            "}"
+            "\tprivate:",
+            "\t\t$2",
+			"",
+            "\tpublic:",
+            "\t\t$1();",
+            "\t\t$1($1 &&) = default;",
+            "\t\t$1(const $1 &) = default;",
+            "\t\t$1 &operator=($1 &&) = default;",
+            "\t\t$1 &operator=(const $1 &) = default;",
+            "\t\tvirtual ~$1();",
+            "}; // End of class $1",
+			""
         ],
         "description": "Code snippet for class"
     },
@@ -111,11 +106,13 @@
         "prefix": "eclass",
         "body": [
             "class ${1:MyClass} {",
-            "public:",
-            "\t$2",
-            "private:",
-            "\t$3",
-            "};",
+            "\tprivate:",
+            "\t\t$2",
+			"",
+            "\t\t$3",
+            "\tpublic:",
+            "\t\t$3",
+            "}; // End of class $1",
             ""
         ],
         "description": "Code snippet for empty class"
@@ -190,7 +187,7 @@
             "\tdefault:",
             "\t\t$0",
             "\t\tbreak;",
-            "}"
+            "} // End of switch"
         ],
         "description": "Code snippet for switch statement"
     },
@@ -201,7 +198,7 @@
             "\t$2",
             "}",
             "catch (${1:const std::exception&}) {",
-            "}"
+            "} // End of try-catch"
         ],
         "description": "Code snippet for try catch"
     },
@@ -221,17 +218,17 @@
         "description": "Code snippet for std::cin, provided the header is set"
     },
     "printf": {
-        "prefix": "printf",
+        "prefix": "pri",
         "body": ["printf(\"$1\\n\"$0);"],
         "description": "Generic printf() snippet"
     },
     "sprintf": {
-        "prefix": "sprintf",
+        "prefix": "spri",
         "body": ["sprintf($1, \"$2\\n\"$0);"],
         "description": "Generic sprintf() snippet"
     },
     "fprintf": {
-        "prefix": "fprintf",
+        "prefix": "fpri",
         "body": ["fprintf(${1:stderr}, \"$2\\n\"$0);"],
         "description": "Generic fprintf() snippet"
     },
@@ -265,13 +262,21 @@
         "body": ["#define $0"],
         "description": "Code snippet for #define \" \""
     },
+	"#defm":{
+		"prefix": "defm",
+		"body": [
+			"#define ${1:macro}(${2:arg}) \\",
+			"\t$3"
+		],
+		"description": "Code snippet for #define macro()"
+	},
     "Main function template": {
         "prefix": "main",
         "body": [
-            "int main (int argc, char *argv[]) {",
+            "int main (int argc, char** argv) {",
             "\t$1",
             "\treturn 0;",
-            "}"
+            "} // End of main"
         ],
         "description": "A standard main function for a C++ program"
     },
