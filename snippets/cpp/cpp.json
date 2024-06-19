@@ -479,7 +479,7 @@
 	},
 	"pair<>": {
 		"prefix": "pa",
-		"body": [":pair<${1:int}, ${2:double}> $3"],
+		"body": ["pair<${1:int}, ${2:double}> $3"],
 		"description": "Code snippet for pair<>"
 	}
 }
