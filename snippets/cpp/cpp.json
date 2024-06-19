@@ -328,5 +328,49 @@
         "}"
       ],
       "description": "auto function and trailing return"
-    }
+    },
+	"TEST": {
+		"prefix": "TE",
+		"body": [
+			"TEST(${1:myTest}, ${2:suit}) {",
+			"\t$3",
+			"} // End of $1::$2",
+			""
+		],
+		"description": "Code snippet for adding gtest 'TEST()'"
+	},
+	"TEST_F": {
+		"prefix": "TEF",
+		"body": [
+			"TEST_F(${1:myFixture}, $2{suit}) {",
+			"\t$3",
+			"} // End of $1::$2",
+			""
+		],
+		"description": "Code snippet for adding gtest 'TEST_F()'"
+	},
+	"gtest class": {
+		"prefix": "gcls",
+		"body": [
+			"class ${1:myFixture}: public ::testing::Test$2 {",
+			"\t// protected member functions",
+			"\tprotected:",
+			"\t\tvirtual void SetUp() override",
+			"\t\tvirtual void TearDown() override",
+			"} // End of class $1",
+			""
+		],
+		"description": "Code snippet for gtest fixture"
+	},
+	"gtest main": {
+		"prefix": "gmain",
+		"body": [
+			"int main(int argc, char** argv) {",
+			"\t::testing::InitGoogleTest(&argc, argv);",
+			"return RUN_ALL_TESTS();",
+			"} // End of main",
+			""
+		],
+		"description": "Code snippet for gtest main"
+	}
 }
