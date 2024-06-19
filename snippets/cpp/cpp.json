@@ -367,7 +367,7 @@
 		"body": [
 			"int main(int argc, char** argv) {",
 			"\t::testing::InitGoogleTest(&argc, argv);",
-			"return RUN_ALL_TESTS();",
+			"\treturn RUN_ALL_TESTS();",
 			"} // End of main",
 			""
 		],
