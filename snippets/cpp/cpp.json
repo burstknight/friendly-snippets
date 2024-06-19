@@ -461,5 +461,25 @@
 		"prefix": "AS_AT",
 		"body": ["ASSERT_ANY_THROW(${1:statement});"],
 		"description": "Code snippet gtest to assert any exception"
+	},
+	"std::vector": {
+		"prefix": "sv",
+		"body": ["std::vector<${1:int}> $2"],
+		"description": "Code snippet for std::vector<>"
+	},
+	"vector": {
+		"prefix": "ve",
+		"body": ["vector<${1:int}> $2"],
+		"description": "Code snippet for vector<>"
+	},
+	"std::pair<>": {
+		"prefix": "spa",
+		"body": ["std::pair<${1:int}, ${2:double}> $3"],
+		"description": "Code snippet for std::pair<>"
+	},
+	"pair<>": {
+		"prefix": "pa",
+		"body": [":pair<${1:int}, ${2:double}> $3"],
+		"description": "Code snippet for pair<>"
 	}
 }
