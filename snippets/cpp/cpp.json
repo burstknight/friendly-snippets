@@ -371,5 +371,40 @@
 			""
 		],
 		"description": "Code snippet for gtest main"
+	},
+	"gtest expect equal": {
+		"prefix": "EXEQ",
+		"body": ["EXPECT_EQ(${1:expr1}, ${2:expr2});"],
+		"description": "Code snippet for gtest 'EXPECT_EQ()'"
+	},
+	"gtest expect not equal": {
+		"prefix": "EXNE",
+		"body": ["EXPECT_NE(${1:expr1}, ${2:expr2});"],
+		"description": "Code snippet for gtest 'EXPECT_NE()'"
+	},
+	"gtest expect greater equal": {
+		"prefix": "EXGE",
+		"body": ["EXPECT_GE(${1:expr1}, ${2:expr2});"],
+		"description": "Code snippet for gtest 'EXPECT_GE()'"
+	},
+	"gtest expect greater than": {
+		"prefix": "EXGT",
+		"body": ["EXPECT_GT(${1:expr1}, ${2:expr2});"],
+		"description": "Code snippet for gtest 'EXPECT_GT()'"
+	},
+	"gtest expect less equal": {
+		"prefix": "EXLE",
+		"body": ["EXPECT_LE(${1:expr1}, ${2:expr2});"],
+		"description": "Code snippet for gtest 'EXPECT_LE()'"
+	},
+	"gtest expect less than": {
+		"prefix": "EXLT",
+		"body": ["EXPECT_LT(${1:expr1}, ${2:expr2});"],
+		"description": "Code snippet for gtest 'EXPECT_LT()'"
+	},
+	"gtest expect floating-point numbers equal": {
+		"prefix": "EXDE",
+		"body": ["EXPECT_LE(abs(${1:value1} - ${2:value2}), ${2:1e-6});"],
+		"description": "Code snippet gtest to expect floating-point numbers equal"
 	}
 }
