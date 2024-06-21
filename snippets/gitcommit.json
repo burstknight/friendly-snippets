@@ -4,45 +4,108 @@
         "body": ["${1:type}(${2:scope}): ${3:title}", "", "$0"]
     },
     "fix conventional commit": {
-        "prefix": "fix",
+        "prefix": "fxc",
         "body": ["fix(${1:scope}): ${2:title}", "", "$0"]
     },
+	"fix commit": {
+		"prefix": "fi",
+		"body": [
+			"fix: ${title}",
+			"",
+			"- Problem:",
+			"  $2",
+			"",
+			"- Reason:",
+			"  $3",
+			"",
+			"- Solution:",
+			"  $4"
+		]
+	},
     "feat conventional commit": {
-        "prefix": "feat",
+        "prefix": "ftc",
         "body": ["feat(${1:scope}): ${2:title}", "", "$0"]
     },
-    "build conventional commit": {
-        "prefix": "build",
-        "body": ["build(${1:scope}): ${2:title}", "", "$0"]
-    },
+	"feat commit": {
+		"prefix": "fet",
+		"body": [
+			"feat: ${1:title}"
+		]
+	},
     "chore conventional commit": {
-        "prefix": "chore",
+        "prefix": "chc",
         "body": ["chore(${1:scope}): ${2:title}", "", "$0"]
     },
+	"chore commit": {
+		"prefix": "cho",
+		"body": [
+			"chore: ${1:title}"
+		]
+	},
     "ci conventional commit": {
-        "prefix": "ci",
+        "prefix": "cic",
         "body": ["ci(${1:scope}): ${2:title}", "", "$0"]
     },
     "docs conventional commit": {
-        "prefix": "docs",
-        "body": ["docs(${1:scope}): ${2:title}", "", "$0"]
+        "prefix": "docc",
+        "body": ["doc(${1:scope}): ${2:title}", "", "$0"]
     },
+	"doc commit": {
+		"prefix": "doc",
+		"body": [
+			"doc: ${1:title}"
+		]
+	},
     "style conventional commit": {
-        "prefix": "style",
+        "prefix": "stc",
         "body": ["style(${1:scope}): ${2:title}", "", "$0"]
     },
+	"style commit": {
+		"prefix": "sty",
+		"body": [
+			"style: ${1:title}"
+		]
+	},
     "refactor conventional commit": {
-        "prefix": "refactor",
+        "prefix": "rec",
         "body": ["refactor(${1:scope}): ${2:title}", "", "$0"]
     },
+	"refactor commit": {
+		"prefix": "ref",
+		"body": [
+			"refactor: ${1:title}"
+		]
+	},
     "perf conventional commit": {
-        "prefix": "perf",
+        "prefix": "pec",
         "body": ["perf(${1:scope}): ${2:title}", "", "$0"]
     },
+	"perf commit": {
+		"prefix": "pef",
+		"body": [
+			"perf: ${1:title}"
+		]
+	},
     "test conventional commit": {
-        "prefix": "test",
+        "prefix": "tec",
         "body": ["test(${1:scope}): ${2:title}", "", "$0"]
     },
+	"test commit": {
+		"prefix": "te",
+		"body": [
+			"test: ${1:title}"
+		]
+	},
+	"common commit body":{
+		"prefix": "cb",
+		"body": [
+			"- Target:",
+			"$1",
+			"",
+			"- Changed",
+			"$2"
+		]
+	},
     "breaking change conventional commit footer": {
         "prefix": "BREAK",
         "body": ["BREAKING CHANGE: $0"]
