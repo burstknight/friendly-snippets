@@ -257,12 +257,12 @@
         "description": "Code snippet for #include < >"
     },
     "#def": {
-        "prefix": "def",
+        "prefix": "#def",
         "body": ["#define $0"],
         "description": "Code snippet for #define \" \""
     },
 	"#defm":{
-		"prefix": "defm",
+		"prefix": "#defm",
 		"body": [
 			"#define ${1:macro}(${2:arg}) \\",
 			"\t$3"
