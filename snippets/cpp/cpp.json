@@ -195,11 +195,10 @@
         "body": [
             "try {",
             "\t$2",
-            "}",
-            "catch (${1:const std::exception&}) {",
+            "} catch (${1:const std::exception&}) {",
             "} // End of try-catch"
         ],
-        "description": "Code snippet for try catch"
+        "description": "Code snippet for try-catch"
     },
     "union": {
         "prefix": "union",
