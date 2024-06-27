@@ -100,10 +100,10 @@
 		"prefix": "cb",
 		"body": [
 			"- Target:",
-			"$1",
+			"  $1",
 			"",
 			"- Changed",
-			"$2"
+			"  $2"
 		]
 	},
     "breaking change conventional commit footer": {
