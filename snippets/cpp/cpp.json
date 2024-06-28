@@ -159,6 +159,12 @@
         "prefix": "ns",
         "body": ["namespace ${1:MyNamespace} {", "\t$0", "} // End of namespace $1", ""]
     },
+	"using namespace": {
+		"prefix": "usn",
+		"body": [
+			"using namespace $1;"
+		]
+	},
     "#ifdef": {
         "prefix": "#ifdef",
         "body": ["#ifdef ${1:DEBUG}", "$0", "#endif // End of ${DEBUG}"],
