@@ -376,5 +376,15 @@
 			""
 		],
 		"description": "Code snippet for gtest main"
+	},
+	"make_shared<T>": {
+		"prefix": "m_sh",
+		"body": ["make_shared<${1:Typename}>($2);"],
+		"description": "Code snippet for make_shared<T>"
+	},
+	"make_unique<T>": {
+		"prefix": "m_un",
+		"body": ["make_unique<${1:Typename}>$($2);"],
+		"description": "Code snippet for make_unique<T>"
 	}
 }
