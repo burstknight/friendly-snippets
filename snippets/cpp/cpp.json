@@ -19,7 +19,7 @@
             "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
             "\t$0",
             "} // End of for-loop",
-			""
+			"\r"
         ],
         "description": "Code snippet for 'for' loop"
     },
@@ -29,7 +29,7 @@
             "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {",
             "\t$0",
             "} // End of for-loop",
-			""
+			"\r"
         ],
         "description": "Code snippet for reverse 'for' loop"
     },
@@ -44,7 +44,7 @@
 			"while ($1) {", 
 			"\t$2", 
 			"} // End of while-loop",
-			""
+			"\r"
 		],
         "description": "Code snippet while loop"
     },
@@ -54,7 +54,7 @@
             "for(${1:auto} ${2:var} : ${3:collection_to_loop}) {",
             "\t$0",
             "} // End of for-loop",
-			""
+			"\r"
         ],
         "description": "Code snippet for range-based for loop (c++11) statement"
     },
@@ -162,7 +162,7 @@
 	"using namespace": {
 		"prefix": "usn",
 		"body": [
-			"using namespace $1;"
+			"using namespace $1;$2"
 		]
 	},
     "#ifdef": {
@@ -192,7 +192,8 @@
             "\tdefault:",
             "\t\t$0",
             "\t\tbreak;",
-            "} // End of switch"
+            "} // End of switch",
+			"\r"
         ],
         "description": "Code snippet for switch statement"
     },
@@ -202,7 +203,8 @@
             "try {",
             "\t$2",
             "} catch (${1:const std::exception&}) {",
-            "} // End of try-catch"
+            "} // End of try-catch",
+			"\r"
         ],
         "description": "Code snippet for try-catch"
     },
