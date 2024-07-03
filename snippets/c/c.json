@@ -16,11 +16,10 @@
             "#include <stdio.h>",
             "#include <stdlib.h>",
             "",
-            "int main(int argc, char *argv[])",
-            "{",
+            "int main(int argc, char** argv) {",
             "\t$0",
             "\treturn EXIT_SUCCESS;",
-            "}"
+            "} // End of main"
         ],
         "description": "Standard starter template for a tiny C program"
     },
@@ -40,17 +39,21 @@
     "main() template": {
         "prefix": "main",
         "body": [
-            "int main(int argc, char *argv[])",
-            "{",
+            "int main(int argc, char** argv) {",
             "\t$0",
             "\treturn EXIT_SUCCESS;",
-            "}"
+            "} // End of main"
         ],
         "description": "Standard main() snippet"
     },
     "main(void) template": {
         "prefix": "mainn",
-        "body": ["int main(void)", "{$0", "", "\treturn EXIT_SUCCESS;", "}"],
+        "body": [
+			"int main(void) {",
+			"\t$1",
+			"\treturn EXIT_SUCCESS;",
+			"} // End of main"
+		],
         "description": "No-args main() snippet"
     },
     "#include <...>": {
@@ -109,12 +112,12 @@
         "body": [
             "#ifdef __cplusplus",
             "extern \"C\" {",
-            "#endif",
+            "#endif // End of __cplusplus",
             "$0",
             "",
             "#ifdef __cplusplus",
             "} /* extern \"C\" */",
-            "#endif"
+            "#endif // End of __cplusplus"
         ],
         "description": "Disable C++ name mangling in C headers"
     },
@@ -130,42 +133,66 @@
     },
     "if": {
         "prefix": "if",
-        "body": ["if (${1:true}) {$0", "}"],
+        "body": [
+			"if (${1:true}) {",
+			"\t$2",
+			"} // End of if-condition"
+		],
         "description": "'if' snippet"
     },
     "if else": {
         "prefix": "ifelse",
-        "body": ["if (${1:true}) {$2", "} else {$0", "}"],
+        "body": [
+			"if (${1:true}) {", 
+			"\t$2",
+			"} else {",
+			"\t$3",
+			"}"
+		],
         "description": "'if' with 'else'"
     },
     "else": {
         "prefix": "else",
-        "body": ["else {$0", "}"],
+        "body": [
+			"else {", 
+			"\t$1",
+			"} "
+		],
         "description": "'else' snippet"
     },
     "else if": {
         "prefix": "elseif",
-        "body": ["else if (${1:true}) {$0", "}"],
+        "body": [
+			"else if (${1:true}) {",
+			"\t$2",
+			"} "
+		],
         "description": "else-if snippet"
     },
     "if 1L": {
         "prefix": "ifi",
-        "body": ["if (${1:true})$0"],
+        "body": ["if (${1:true}) $0"],
         "description": "1-line-if"
     },
     "elif 1L": {
         "prefix": "elseifi",
-        "body": ["else if (${1:true})$0"],
+        "body": ["else if (${1:true}) $0"],
         "description": "1-line-else-if"
     },
     "switch": {
-        "prefix": "switch",
-        "body": ["switch (${1:expression}) {$0", "}"],
+        "prefix": "sw",
+        "body": [
+			"switch (${1:expression}) {",
+			"\t$2",
+			"} // End of switch"
+		],
         "description": "'switch' snippet"
     },
     "case": {
         "prefix": "case",
-        "body": ["case ${1:0}:$0"],
+        "body": [
+			"case ${1:0}:$2"
+		],
         "description": "'case' branch"
     },
     "default": {
@@ -174,13 +201,21 @@
         "description": "'default' branch"
     },
     "while": {
-        "prefix": "while",
-        "body": ["while (${1:true}) {$0", "}"],
+        "prefix": "wht",
+        "body": [
+			"while (${1:true}) {",
+			"\t$2",
+			"} // End of while-loop"
+		],
         "description": "'while' loop snippet"
     },
     "do...while": {
-        "prefix": "do",
-        "body": ["do {$0", "} while (${1:false});"],
+        "prefix": "dow",
+        "body": [
+			"do {",
+			"\t$2",
+			"} while (${1:false});"
+		],
         "description": "do...while loop snippet"
     },
     "return": {
@@ -195,7 +230,11 @@
     },
     "for": {
         "prefix": "for",
-        "body": ["for ($1;$2;$3) {$0", "}"],
+        "body": [
+			"for ($1;$2;$3) {",
+			"\t$4",
+			"} // End of for-loop"
+		],
         "description": "Generic 'for' loop"
     },
     "for count": {
@@ -226,7 +265,12 @@
     },
     "Function definition": {
         "prefix": "func",
-        "body": ["${2:void} ${1:fun}(${3:void})", "{$0", "}"],
+        "body": [
+			"${2:void} ${1:fun}(${3:void}) {",
+			"\t$0", 
+			"} // End of $1",
+			"\r"
+		],
         "description": "Define a function"
     },
     "typedef": {
@@ -379,7 +423,8 @@
         "body": [
             "if (${1:status} == EOF$2) {",
             "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
-            "}"
+            "} // End of if-condition",
+			"\r"
         ],
         "description": "Error checking for int IO functions"
     },
@@ -388,7 +433,8 @@
         "body": [
             "if (!${1:status}) {",
             "\t${2:err(EXIT_FAILURE, \"IO is very hard\");}",
-            "}"
+            "} // End of if-condition",
+			"\r"
         ],
         "description": "Error checking for pointer-type IO functions"
     },
@@ -397,7 +443,8 @@
         "body": [
             "if (${1:status} == -1$2) {",
             "\t${3:err(EXIT_FAILURE, \"IO is super hard\");}",
-            "}"
+            "} // End of if-condition",
+			"\r"
         ],
         "description": "Error checking for fseek(), getline() like functions"
     },
@@ -406,7 +453,8 @@
         "body": [
             "if (${1:status} < 0$2) {",
             "\t${3:err(EXIT_FAILURE, \"Ran out of ink\");}",
-            "}"
+            "} // End of if-condition",
+			"\r"
         ],
         "description": "Error checking for printf()-like functions"
     },
@@ -415,7 +463,8 @@
         "body": [
             "if (!${1:status}) {",
             "\t${2:err(EXIT_FAILURE, \"Your memory is doomed\");}",
-            "}"
+            "} // End of if-coondition",
+			"\r"
         ],
         "description": "Error checking for malloc()-like"
     },
