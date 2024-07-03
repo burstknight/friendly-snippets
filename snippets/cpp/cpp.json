@@ -348,7 +348,7 @@
 	"TEST_F": {
 		"prefix": "TEF",
 		"body": [
-			"TEST_F(${1:myFixture}, $2{suit}) {",
+			"TEST_F(${1:myFixture}, ${2:suit}) {",
 			"\t$3",
 			"} // End of $1::$2",
 			""
