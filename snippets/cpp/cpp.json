@@ -287,16 +287,16 @@
         "description": "A standard main function for a C++ program"
     },
     "#guard": {
-      "prefix": "#guard",
+      "prefix": "#hg",
       "body": [
-        "#ifndef INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
-        "#define INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
+        "#ifndef ${TM_DIRECTORY/(.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
+        "#define ${TM_DIRECTORY/(.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
         "",
         "$0",
         "",
-        "#endif  // INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
+        "#endif  // End of ${TM_DIRECTORY/(.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H"
       ],
-      "description": "header guard. format :\n\tINCLUDE_<dirname>_<filename>_<extension>_"
+      "description": "header guard. format :\n\t<dirname>_<filename>_H"
     },
     "sca": {
       "prefix": "sca",
