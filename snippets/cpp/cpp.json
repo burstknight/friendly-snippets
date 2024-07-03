@@ -186,7 +186,7 @@
         "description": "Code snippet for struct"
     },
     "switch": {
-        "prefix": "switch",
+        "prefix": "sw",
         "body": [
             "switch (${1:switch_on}) {",
             "\tdefault:",
