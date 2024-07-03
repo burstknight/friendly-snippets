@@ -361,9 +361,9 @@
 			"class ${1:myFixture}: public ::testing::Test$2 {",
 			"\t// protected member functions",
 			"\tprotected:",
-			"\t\tvirtual void SetUp() override",
-			"\t\tvirtual void TearDown() override",
-			"} // End of class $1",
+			"\t\tvirtual void SetUp() override;",
+			"\t\tvirtual void TearDown() override;",
+			"}; // End of class $1",
 			""
 		],
 		"description": "Code snippet for gtest fixture"
