@@ -10,7 +10,7 @@
 	"fix commit": {
 		"prefix": "fi",
 		"body": [
-			"fix: ${title}",
+			"fix: ${1:title}",
 			"",
 			"- Problem:",
 			"  $2",
