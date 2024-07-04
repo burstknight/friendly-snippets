@@ -8,8 +8,7 @@
             "\t$1",
             "",
             "\treturn 0;",
-        "} // End of main",
-		""
+        "} // End of main"
         ],
         "description": "Standard starter template for a tiny C++ program"
     },
@@ -18,8 +17,7 @@
         "body": [
             "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
             "\t$0",
-            "} // End of for-loop",
-			"\r"
+            "} // End of for-loop"
         ],
         "description": "Code snippet for 'for' loop"
     },
@@ -28,8 +26,7 @@
         "body": [
             "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {",
             "\t$0",
-            "} // End of for-loop",
-			"\r"
+            "} // End of for-loop"
         ],
         "description": "Code snippet for reverse 'for' loop"
     },
@@ -43,8 +40,7 @@
         "body": [
 			"while ($1) {", 
 			"\t$2", 
-			"} // End of while-loop",
-			"\r"
+			"} // End of while-loop"
 		],
         "description": "Code snippet while loop"
     },
@@ -53,14 +49,17 @@
         "body": [
             "for(${1:auto} ${2:var} : ${3:collection_to_loop}) {",
             "\t$0",
-            "} // End of for-loop",
-			"\r"
+            "} // End of for-loop"
         ],
         "description": "Code snippet for range-based for loop (c++11) statement"
     },
     "if": {
         "prefix": "if",
-        "body": ["if ($1) {", "\t$0", "} // End of if-condition", ""],
+        "body": [
+			"if (${1:true}) {",
+			"\t$0",
+			"} // End of if-condition"
+		],
         "description": "Code snippet for if statement"
     },
     "else": {
@@ -157,7 +156,12 @@
     },
     "namespace": {
         "prefix": "ns",
-        "body": ["namespace ${1:MyNamespace} {", "\t$0", "} // End of namespace $1", ""]
+        "body": [
+			"namespace ${1:MyNamespace} {",
+			"$0",
+			"} // End of namespace $1", 
+			""
+		]
     },
 	"using namespace": {
 		"prefix": "usn",
@@ -192,8 +196,7 @@
             "\tdefault:",
             "\t\t$0",
             "\t\tbreak;",
-            "} // End of switch",
-			"\r"
+            "} // End of switch"
         ],
         "description": "Code snippet for switch statement"
     },
@@ -203,8 +206,7 @@
             "try {",
             "\t$2",
             "} catch (${1:const std::exception&}) {",
-            "} // End of try-catch",
-			"\r"
+            "} // End of try-catch"
         ],
         "description": "Code snippet for try-catch"
     },
