@@ -31,7 +31,11 @@
     },
     "if __name__ == __main__": {
         "prefix": "ifmain",
-        "body": ["if __name__ == \"__main__\":", "\t${1:main()}"],
+        "body": [
+			"if \"__main__\" == __name__:", 
+			"\t${1:main()}",
+			"# End of if-condition"
+		],
         "description": "Execute code if the file is executed directly"
     },
     "import": {
@@ -46,22 +50,38 @@
     },
     "if": {
         "prefix": "if",
-        "body": ["if ${1:condition}:", "\t${2:pass}"],
+        "body": [
+			"if ${1:condition}:",
+			"\t${2:pass}",
+			"# End of if-condition"
+		],
         "description": "if statement"
     },
     "elif": {
         "prefix": "elif",
-        "body": ["elif ${1:expression}:", "\t${2:pass}"],
+        "body": [
+			"elif ${1:expression}:",
+			"\t${2:pass}"
+		],
         "description": "elif statement"
     },
     "else": {
         "prefix": "else",
-        "body": ["else:", "\t${1:pass}"],
+        "body": [
+			"else:",
+			"\t${1:pass}"
+		],
         "description": "else statement"
     },
     "if/else": {
-        "prefix": "ifelse",
-        "body": ["if ${1:condition}:", "\t${2:pass}", "else:", "\t${3:pass}"],
+        "prefix": "ife",
+        "body": [
+			"if ${1:condition}:",
+			"\t${2:pass}",
+			"else:",
+			"\t${3:pass}",
+			"# End of if-condition"
+		],
         "description": "if statement with else"
     },
     "match/case": {
@@ -69,7 +89,8 @@
         "body": [
             "match ${1:expression}:",
             "\tcase ${2:pattern}:",
-            "\t\t${3:pass}"
+            "\t\t${3:pass}",
+			"# End of match"
         ],
         "description": "match/case statements"
     },
@@ -85,22 +106,38 @@
     },
     "while": {
         "prefix": "while",
-        "body": ["while ${1:condition}:", "\t${2:pass}"],
+        "body": [
+			"while ${1:True}:",
+			"\t${2:pass}",
+			"# End of while-loop"
+		],
         "description": "while loop"
     },
     "for": {
         "prefix": "for",
-        "body": ["for ${1:value} in ${2:iterable}:", "\t${3:pass}"],
+        "body": [
+			"for ${1:value} in ${2:iterable}:",
+			"\t${3:pass}",
+			"# End of for-loop"
+		],
         "description": "for loop"
     },
     "for w/ range": {
         "prefix": "forr",
-        "body": ["for ${1:value} in range($2):", "\t${3:pass}"],
+        "body": [
+			"for ${1:value} in range($2):",
+			"\t${3:pass}",
+			"# End of for-loop"
+		],
         "description": "for loop that iterates over range of integers"
     },
     "with": {
         "prefix": "with",
-        "body": ["with ${1:expression} as ${2:target}:", "\t${3:pass}"],
+        "body": [
+			"with ${1:expression} as ${2:target}:",
+			"\t${3:pass}",
+			"# End of with-block"
+		],
         "description": "'with' statement"
     },
     "lambda": {
@@ -110,43 +147,68 @@
     },
     "Function": {
         "prefix": "def",
-        "body": ["def ${1:fname}($2):", "\t${3:pass}"],
+        "body": [
+			"def ${1:fname}($2):",
+			"\t${3:pass}",
+			"# End of $1"
+		],
         "description": "Function definition"
     },
     "Function w/ return type": {
         "prefix": "deft",
-        "body": ["def ${1:fname}($2) -> ${3:None}:", "\t${4:pass}"],
+        "body": [
+			"def ${1:fname}($2) -> ${3:None}:",
+			"\t${4:pass}",
+			"# End of $1"
+		],
         "description": "Function definition with return type"
     },
     "class": {
-        "prefix": "class",
-        "body": ["class ${1:classname}:", "\t${2:pass}"],
+        "prefix": "cls",
+        "body": [
+			"class ${1:classname}:",
+			"\t${2:pass}",
+			"# End of class $1"
+		],
         "description": "Class definition"
     },
     "Derived class": {
-        "prefix": "classd",
-        "body": ["class ${1:classname}($2):", "\t${3:pass}"],
+        "prefix": "clsd",
+        "body": [
+			"class ${1:classname}(${2:object}):",
+			"\t${3:pass}",
+			"# End of class $1"
+		],
         "description": "Class definition with inheritance"
     },
     "class template": {
-        "prefix": "classi",
+        "prefix": "clsi",
         "body": [
             "class ${1:ClassName}($2):",
             "\t\"\"\"${3:docstring for $1.}\"\"\"",
-            "\tdef __init__(self, ${4:arg}):",
+            "\tdef __init__(self${4:, arg}):",
             "\t\t${5:super($1, self).__init__()}",
-            "\t\tself.$4 = $4$0"
+            "\t\tself.$4 = $4$0",
+			"# End of class $1"
         ],
         "description": "Class definition template"
     },
     "Method": {
-        "prefix": "defs",
-        "body": ["def ${1:mname}(self$2):", "\t${3:pass}"],
+        "prefix": "defm",
+        "body": [
+			"def ${1:mname}(self$2):",
+			"\t${3:pass}",
+			"# End of $1"
+		],
         "description": "Class method definition"
     },
     "Method w/ return type": {
-        "prefix": "defst",
-        "body": ["def ${1:mname}(self$2) -> ${3:None}:", "\t${4:pass}"],
+        "prefix": "defmt",
+        "body": [
+			"def ${1:mname}(self$2) -> ${3:None}:",
+			"\t${4:pass}",
+			"# End of $1"
+		],
         "description": "Class method definition"
     },
     "property template": {
@@ -155,11 +217,13 @@
             "@property",
             "def ${1:pname}(self):",
             "\t\"\"\"${2:The $1 property.}\"\"\"",
-            "\t${3:return self._$1}",
+            "\t${3:return self.__$1}",
+			"# End of $1(getter)",
             "",
             "@${4:$1}.setter",
             "def ${5:$1}(self, value):",
-            "\t${6:self._$1} = value"
+            "\t${6:self.__$1} = value",
+			"# End of $1(setter)"
         ],
         "description": "New property: get and set via decorator"
     },
@@ -179,7 +243,8 @@
             "try:",
             "\t${1:pass}",
             "except ${2:Exception} as ${3:e}:",
-            "\t${4:raise $3}"
+            "\t${4:raise $3}",
+			"# End of try-catch"
         ],
         "description": "try/except blocks"
     },
@@ -203,7 +268,8 @@
             "except ${2:Exception} as ${3:e}:",
             "\t${4:raise $3}",
             "finally:",
-            "\t${5:pass}"
+            "\t${5:pass}",
+			"# End of try-catch"
         ],
         "description": "try/except/finally blocks"
     },
@@ -217,7 +283,8 @@
             "else:",
             "\t${6:pass}",
             "finally:",
-            "\t${7:pass}"
+            "\t${7:pass}",
+			"# End of try-catch"
         ],
         "description": "try/except/else/finally blocks"
     },
