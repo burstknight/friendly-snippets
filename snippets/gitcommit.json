@@ -61,7 +61,7 @@
 		"body": [
 			"doc: ${1:title}",
 			"",
-			"$1"
+			"$1."
 		]
 	},
     "style conventional commit": {
