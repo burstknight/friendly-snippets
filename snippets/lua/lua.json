@@ -10,7 +10,7 @@
         "description": "return value"
     },
     "assigment": {
-        "prefix": "ll",
+        "prefix": "lv",
         "body": ["local ${1:varName} = ${0:value}"],
         "description": "create a variable"
     },
