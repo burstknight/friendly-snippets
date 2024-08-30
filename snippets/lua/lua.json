@@ -70,8 +70,12 @@
         "body": ["function ${1:name}($2)", "\t${0:-- code}", "end"]
     },
     "inline-function": {
-        "prefix": "f=",
-        "body": ["local ${1:name} = function($2)", "\t${0:-- code}", "end"]
+        "prefix": "lf",
+        "body": [
+			"local ${1:name} = function($2)",
+			"\t${0:-- code}",
+			"end"
+		]
     },
     "print": {
         "prefix": "p",
