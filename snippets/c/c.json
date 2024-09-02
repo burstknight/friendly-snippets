@@ -6,7 +6,7 @@
     },
     "Multiline comment": {
         "prefix": "//",
-        "body": ["/*$0", " */"],
+        "body": ["/* $0", " */"],
         "description": "Convenient multiline comment"
     },
     "Starter Template": {
@@ -141,13 +141,13 @@
         "description": "'if' snippet"
     },
     "if else": {
-        "prefix": "ifelse",
+        "prefix": "ifel",
         "body": [
 			"if (${1:true}) {", 
 			"\t$2",
 			"} else {",
 			"\t$3",
-			"}"
+			"} // End of if-condition"
 		],
         "description": "'if' with 'else'"
     },
@@ -161,7 +161,7 @@
         "description": "'else' snippet"
     },
     "else if": {
-        "prefix": "elseif",
+        "prefix": "elif",
         "body": [
 			"else if (${1:true}) {",
 			"\t$2",
@@ -175,7 +175,7 @@
         "description": "1-line-if"
     },
     "elif 1L": {
-        "prefix": "elseifi",
+        "prefix": "elifi",
         "body": ["else if (${1:true}) $0"],
         "description": "1-line-else-if"
     },
@@ -191,13 +191,18 @@
     "case": {
         "prefix": "case",
         "body": [
-			"case ${1:0}:$2"
+			"case ${1:0}:",
+			"\t\t$2"
 		],
         "description": "'case' branch"
     },
     "default": {
         "prefix": "default",
-        "body": ["default:$0"],
+        "body": [
+			"default:",
+			"\t\t$0",
+			"\t\tbreak;"
+		],
         "description": "'default' branch"
     },
     "while": {
@@ -240,22 +245,28 @@
     "for count": {
         "prefix": "forc",
         "body": [
-            "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:count}; $2${5:++}) {$0",
-            "}"
+            "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:count}; $2${5:++}) {",
+			"\t$6",
+            "} // End of for-loop"
         ],
         "description": "'for' loop focusing on iteration times"
     },
     "for range": {
         "prefix": "forg",
         "body": [
-            "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:last}; $2${5:++}) {$0",
-            "}"
+            "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:last}; $2${5:++}) {",
+			"\t$6",
+            "} // End of for-loop"
         ],
         "description": "'for' loop focusing on inclusive range"
     },
     "for argv[]": {
         "prefix": "fora",
-        "body": ["for (int ${1:i} = ${2:1}; $1 < argc; $1++) {$0", "}"],
+        "body": [
+			"for (int ${1:i} = ${2:1}; $1 < argc; $1++) {",
+			"\t$3",
+			"} // End of for-loop"
+		],
         "description": "'for' loop for cmdline arguments"
     },
     "Function ...": {
@@ -268,8 +279,7 @@
         "body": [
 			"${2:void} ${1:fun}(${3:void}) {",
 			"\t$0", 
-			"} // End of $1",
-			"\r"
+			"} // End of $1"
 		],
         "description": "Define a function"
     },
@@ -295,27 +305,49 @@
     },
     "struct": {
         "prefix": "struct",
-        "body": ["struct ${1:MyStruct} {$0", "};"],
+        "body": [
+			"struct ${1:MyStruct} {", 
+			"\t$2",
+			"};"
+		],
         "description": "'struct' snippet"
     },
     "struct type": {
         "prefix": "typestruct",
-        "body": ["typedef struct $1 ${1:Box};", "struct $1 {$0", "};"],
+        "body": [
+			"typedef struct $1 ${1:Box};",
+			"struct $1 {",
+			"\t$2",
+			"};"
+		],
         "description": "Define a type with struct"
     },
     "union": {
         "prefix": "union",
-        "body": ["union ${1:MyUnion} {$0", "};"],
+        "body": [
+			"union ${1:MyUnion} {",
+			"\t$2",
+			"};"
+		],
         "description": "'union' snippet"
     },
     "union type": {
         "prefix": "typeunion",
-        "body": ["typedef union $1 ${1:Cell};", "union $1 {$0", "};"],
+        "body": [
+			"typedef union $1 ${1:Cell};",
+			"union $1 {",
+			"\t$2",
+			"};"
+		],
         "description": "Define a type with union"
     },
     "enum": {
         "prefix": "enum",
-        "body": ["enum $1{ $0 };"],
+        "body": [
+			"enum $1{",
+			"\t$2",
+			"};"
+		],
         "description": "Define an enumeration"
     },
     "puts": {
@@ -365,12 +397,12 @@
     },
     "malloc": {
         "prefix": "malloc",
-        "body": ["malloc(sizeof(${1:int[69]})$2)$0"],
+        "body": ["malloc(sizeof(${1:int})$2)$0"],
         "description": "malloc() snippet"
     },
     "calloc": {
         "prefix": "calloc",
-        "body": ["calloc(${1:1}, sizeof(${2:int})$3)$0"],
+        "body": ["calloc(${1:1}, sizeof(${2:int})$3);$0"],
         "description": "calloc() snippet"
     },
     "realloc": {
@@ -423,8 +455,7 @@
         "body": [
             "if (${1:status} == EOF$2) {",
             "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
-            "} // End of if-condition",
-			"\r"
+            "} // End of if-condition"
         ],
         "description": "Error checking for int IO functions"
     },
@@ -433,8 +464,7 @@
         "body": [
             "if (!${1:status}) {",
             "\t${2:err(EXIT_FAILURE, \"IO is very hard\");}",
-            "} // End of if-condition",
-			"\r"
+            "} // End of if-condition"
         ],
         "description": "Error checking for pointer-type IO functions"
     },
@@ -443,8 +473,7 @@
         "body": [
             "if (${1:status} == -1$2) {",
             "\t${3:err(EXIT_FAILURE, \"IO is super hard\");}",
-            "} // End of if-condition",
-			"\r"
+            "} // End of if-condition"
         ],
         "description": "Error checking for fseek(), getline() like functions"
     },
@@ -453,8 +482,7 @@
         "body": [
             "if (${1:status} < 0$2) {",
             "\t${3:err(EXIT_FAILURE, \"Ran out of ink\");}",
-            "} // End of if-condition",
-			"\r"
+            "} // End of if-condition"
         ],
         "description": "Error checking for printf()-like functions"
     },
@@ -463,8 +491,7 @@
         "body": [
             "if (!${1:status}) {",
             "\t${2:err(EXIT_FAILURE, \"Your memory is doomed\");}",
-            "} // End of if-coondition",
-			"\r"
+            "} // End of if-coondition"
         ],
         "description": "Error checking for malloc()-like"
     },
