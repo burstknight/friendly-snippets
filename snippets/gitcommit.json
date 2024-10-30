@@ -104,6 +104,12 @@
 			"test: ${1:title}"
 		]
 	},
+	"remove commit": {
+		"prefix": "rm",
+		"body": [
+			"remove: ${1:title}"
+		]
+	},
 	"common commit body":{
 		"prefix": "cb",
 		"body": [
