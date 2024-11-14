@@ -1,0 +1,139 @@
+{
+    "conventional commit": {
+        "prefix": "cc",
+        "body": ["${1:type}(${2:scope}): ${3:title}", "", "$0"]
+    },
+    "fix conventional commit": {
+        "prefix": "fxc",
+        "body": ["fix(${1:scope}): ${2:title}", "", "$0"]
+    },
+	"fix commit": {
+		"prefix": "fi",
+		"body": [
+			"fix: ${1:title}",
+			"",
+			"- Problem:",
+			"  $2",
+			"",
+			"- Reason:",
+			"  $3",
+			"",
+			"- Solution:",
+			"  $4"
+		]
+	},
+    "feat conventional commit": {
+        "prefix": "ftc",
+        "body": ["feat(${1:scope}): ${2:title}", "", "$0"]
+    },
+	"feat commit": {
+		"prefix": "fet",
+		"body": [
+			"feat: ${1:title}"
+		]
+	},
+    "chore conventional commit": {
+        "prefix": "chc",
+        "body": ["chore(${1:scope}): ${2:title}", "", "$0"]
+    },
+	"chore commit": {
+		"prefix": "cho",
+		"body": [
+			"chore: ${1:title}"
+		]
+	},
+    "ci conventional commit": {
+        "prefix": "cic",
+        "body": ["ci(${1:scope}): ${2:title}", "", "$0"]
+    },
+    "docs conventional commit": {
+        "prefix": "docc",
+        "body": ["doc(${1:scope}): ${2:title}", "", "$0"]
+    },
+	"doc commit": {
+		"prefix": "doc",
+		"body": [
+			"doc: ${1:title}"
+		]
+	},
+	"doc simple commit": {
+		"prefix": "dd",
+		"body": [
+			"doc: ${1:title}",
+			"",
+			"$1."
+		]
+	},
+    "style conventional commit": {
+        "prefix": "stc",
+        "body": ["style(${1:scope}): ${2:title}", "", "$0"]
+    },
+	"style commit": {
+		"prefix": "sty",
+		"body": [
+			"style: ${1:title}"
+		]
+	},
+    "refactor conventional commit": {
+        "prefix": "rec",
+        "body": ["refactor(${1:scope}): ${2:title}", "", "$0"]
+    },
+	"refactor commit": {
+		"prefix": "ref",
+		"body": [
+			"refactor: ${1:title}"
+		]
+	},
+    "perf conventional commit": {
+        "prefix": "pec",
+        "body": ["perf(${1:scope}): ${2:title}", "", "$0"]
+    },
+	"perf commit": {
+		"prefix": "pef",
+		"body": [
+			"perf: ${1:title}"
+		]
+	},
+    "test conventional commit": {
+        "prefix": "tec",
+        "body": ["test(${1:scope}): ${2:title}", "", "$0"]
+    },
+	"test commit": {
+		"prefix": "te",
+		"body": [
+			"test: ${1:title}"
+		]
+	},
+	"remove commit": {
+		"prefix": "rm",
+		"body": [
+			"remove: ${1:title}"
+		]
+	},
+	"common commit body":{
+		"prefix": "cb",
+		"body": [
+			"- Target:",
+			"  $1",
+			"",
+			"- Changed",
+			"  $2"
+		]
+	},
+    "breaking change conventional commit footer": {
+        "prefix": "BREAK",
+        "body": ["BREAKING CHANGE: $0"]
+    },
+    "co-authored by": {
+        "prefix": "co",
+        "body": ["Co-authored-by: ${1:name} <${2:email}>", "$0"]
+    },
+    "signed off by": {
+        "prefix": "si",
+        "body": ["Signed-off-by: ${1:name} <${2:email}>", "$0"]
+    },
+    "on behalf of": {
+        "prefix": "on",
+        "body": ["On-behalf-of: ${1:org} <${2:email}>", "$0"]
+    }
+}
