@@ -583,6 +583,10 @@
 			{
 				"language": "cmake",
 				"path": "./snippets/cmake.json"
+			},
+			{
+				"language": "svn",
+				"path": "./snippets/svn.json"
 			}
         ]
     }
