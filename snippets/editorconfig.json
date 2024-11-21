@@ -31,7 +31,7 @@
   },
   "indent_style": {
     "prefix": "ins",
-    "body": "indent_style = {1:|tab,space}",
+    "body": "indent_style = {1|tab,space}",
     "description": "Indentation Style (tab or space)"
   },
   "indent_size": {
@@ -46,22 +46,22 @@
   },
   "end_of_line": {
     "prefix": "eol",
-    "body": "end_of_line = ${1:|lf,crlf,cr|}",
+    "body": "end_of_line = ${1|lf,crlf,cr|}",
     "description": "Line ending file format (lf, crlf, or cr)"
   },
   "charset": {
     "prefix": "char",
-    "body": "charset = ${1:|utf-8,utf-16be,utf-16le,utf-8-bom|}",
+    "body": "charset = ${1|utf-8,utf-16be,utf-16le,utf-8-bom|}",
     "description": "File character encoding (latin1, utf-8, utf-16be, utf-16le, utf-8-bom)"
   },
   "trim_trailing_space": {
     "prefix": "tts",
-    "body": "trim_trailing_whitespace = ${1:|true,false|}",
+    "body": "trim_trailing_whitespace = ${1|true,false|}",
     "description": "Denotes whether whitespace is removed from the end of lines"
   },
   "insert_final_newline": {
     "prefix": "ifn",
-    "body": "insert_final_newline = ${1:|true,false|}",
+    "body": "insert_final_newline = ${1|true,false|}",
     "description": "Denotes whether file should end with a newline"
   },
   "max_line_length": {
