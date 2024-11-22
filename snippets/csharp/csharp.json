@@ -428,6 +428,13 @@
     ],
     "description": "Using statement"
   },
+  "Using namespace": {
+	  "prefix": "usn",
+	  "body": [
+		"using ${1:System};"
+	  ],
+	  "description": "Import a namespace"
+  },
   "While loop": {
     "prefix": "whi",
     "body": [
@@ -486,5 +493,43 @@
       "} // End of class $2"
     ],
     "description": "Create new class"
+  },
+  "MSTest class": {
+	  "prefix": "msc",
+	  "body": [
+		  "[TestClass]",
+		  "public class ${1:myTestClass} {",
+		  "\t$2",
+		  "} // End of class $1"
+	  ],
+	  "description": "Create MSTest class"
+  },
+  "MSTest method without test data": {
+	  "prefix": "msm",
+	  "body": [
+		  "[TestMethod]",
+		  "public void ${1:TestMethod}() {",
+		  "\t$2",
+		  "} // End of $1"
+	  ],
+	  "description": "Create MSTest method without test data"
+  },
+  "MSTest method with test data": {
+	  "prefix": "msmd",
+	  "body": [
+		  "[TestMethod]",
+		  "[DataRow(${3:0})]",
+		  "public void ${1:TestMethod}(${2:int iData}) {",
+		  "\t$4",
+		  "} // End of $1"
+	  ],
+	  "description": "Create MSTest method with test data"
+  },
+  "MSTest test data": {
+	  "prefix": "msd",
+	  "body": [
+		  "[DataRow(${1:0})]"
+	  ],
+	  "description": "Add MSTest test data"
   }
 }
