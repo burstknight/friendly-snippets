@@ -531,5 +531,25 @@
 		  "[DataRow(${1:0})]"
 	  ],
 	  "description": "Add MSTest test data"
+  },
+  "MSTest Setup": {
+	  "prefix": "msi",
+	  "body": [
+		  "[TestInitialize]",
+		  "public void ${1:SetUp}() {",
+		  "\t$2",
+		  "} // End of $1"
+	  ],
+	  "description": "Add MSTest SetUp()"
+  },
+  "MSTest TearDown()": {
+	  "prefix": "msr",
+	  "body": [
+		  "[TestCleanup]",
+		  "public void ${1:TearDown}() {",
+		  "\t$2",
+		  "} // End of $1"
+	  ],
+	  "description": "Add MSTest TearDown()"
   }
 }
