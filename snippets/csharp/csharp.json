@@ -189,8 +189,7 @@
   "Interface": {
     "prefix": "interface",
     "body": [
-      "interface ${1:IMyInterface}",
-      "{",
+      "interface ${1:IMyInterface} {",
       "\t$0",
       "} // End of interface $1"
     ],
