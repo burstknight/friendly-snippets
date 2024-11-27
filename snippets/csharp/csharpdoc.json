@@ -35,7 +35,7 @@
   "<exception>": {
     "prefix": "<exception>",
     "body": [
-      "<exception cref=\"${1]:ExceptionName}\">${2:description.}$0</exception>"
+      "<exception cref=\"${1:ExceptionName}\">${2:description.}</exception>"
     ],
     "description": "This tag provides a way to document the exceptions a method can throw. cref=\"member\" is the name of the exceptionh, which should be a member. The documentation generator checks that the given member exists and translates member to the canonical element name in the documentation file. Description is a description of the circumstances in which the exception is thrown."
   },
