@@ -475,6 +475,13 @@
     ],
     "description": "Creates a Method structure"
   },
+  "Create an abstract Method": {
+	  "prefix": "abmth",
+	  "body": [
+		  "abstract public ${1:void} ${2:MyAbMeythod}();"
+	  ],
+	  "description": "Create an abstract method"
+  },
   "Creates an Async Method structure": {
     "prefix": "asmth",
     "body": [
