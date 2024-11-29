@@ -411,5 +411,24 @@
         "prefix": ["caution", "c"],
         "body": "> [!CAUTION]\n> ",
         "description": "Insert Caution"
-    }
+    },
+	"Change Log Content": {
+		"prefix": "clc",
+		"body": [
+			"## [Unreleased]",
+			"### [Added]",
+			"",
+			"### [Changed]",
+			"",
+			"### [Fixed]",
+			"",
+			"### [Security]",
+			"",
+			"### [Removed]",
+			"",
+			"### [Deprecated]",
+			""
+		],
+		"description": "Insert change log snippets"
+	}
 }
