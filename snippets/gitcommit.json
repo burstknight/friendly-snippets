@@ -64,6 +64,14 @@
 			"$1."
 		]
 	},
+	"doc simple conventional commit": {
+		"prefix": "ddc",
+		"body": [
+			"doc(${1:scope}): ${2:title}",
+			"",
+			"$2."
+		]
+	},
     "style conventional commit": {
         "prefix": "stc",
         "body": ["style(${1:scope}): ${2:title}", "", "$0"]
@@ -108,6 +116,12 @@
 		"prefix": "rm",
 		"body": [
 			"remove: ${1:title}"
+		]
+	},
+	"remove conventional commit": {
+		"prefix": "rmc",
+		"body": [
+			"remove(${1:scope}): ${2:title}"
 		]
 	},
 	"common commit body":{
