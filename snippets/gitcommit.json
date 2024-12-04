@@ -5,7 +5,18 @@
     },
     "fix conventional commit": {
         "prefix": "fxc",
-        "body": ["fix(${1:scope}): ${2:title}", "", "$0"]
+        "body": [
+			"fix(${1:scope}): ${2:title}",
+			"", 
+			"- Problem:",
+			"  $3",
+			"",
+			"- Reason:",
+			"  $4",
+			"",
+			"- Solution:",
+			"  $5"
+		]
     },
 	"fix commit": {
 		"prefix": "fi",
