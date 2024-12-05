@@ -390,9 +390,9 @@
     "prefix": "try",
     "body": [
       "try {",
-      "\t$1",
-      "} catch (${2:System.Exception}) {",
-      "\t$0",
+      "\t$2",
+      "} catch (${1:System.Exception oEx}) {",
+      "\t$3",
       "} // End of try-catch"
     ],
     "description": "Try catch"
