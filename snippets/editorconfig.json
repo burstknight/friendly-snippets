@@ -31,7 +31,7 @@
   },
   "indent_style": {
     "prefix": "ins",
-    "body": "indent_style = {1|tab,space}",
+    "body": "indent_style = ${1|tab,space}",
     "description": "Indentation Style (tab or space)"
   },
   "indent_size": {
