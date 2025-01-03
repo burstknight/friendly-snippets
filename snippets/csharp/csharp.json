@@ -469,7 +469,7 @@
   "Creates a Method structure": {
     "prefix": "mth",
     "body": [
-      "${1:public} ${2:void} ${3:MyMethod}(${4:string} ${5:parameter}) {",
+      "${1:public} ${2:void} ${3:MyMethod}(${4:string sParameter}) {",
       "\t$0",
       "} // End of $3"
     ],
