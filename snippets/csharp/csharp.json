@@ -475,6 +475,15 @@
     ],
     "description": "Creates a Method structure"
   },
+  "Create a static method": {
+	  "prefix": "smth",
+	  "body": [
+		"${1:public} static ${2:void} ${3:Method}($4) {",
+		"\t$0",
+		"} // End of $3"
+	  ],
+	  "description": "Create a static method"
+  },
   "Create an abstract Method": {
 	  "prefix": "abmth",
 	  "body": [
@@ -520,8 +529,8 @@
 	  ],
 	  "description": "Create MSTest method without test data"
   },
-  "MSTest method with test data": {
-	  "prefix": "msmd",
+  "MSTest method with static test data": {
+	  "prefix": "msmsd",
 	  "body": [
 		  "[TestMethod]",
 		  "[DataRow(${3:0})]",
@@ -530,6 +539,17 @@
 		  "} // End of $1"
 	  ],
 	  "description": "Create MSTest method with test data"
+  },
+  "MSTest method with dynamic test data": {
+	  "prefix": "msmdd",
+	  "body": [
+		"[TestMethod]",
+		"[DynamicData(nameof(${1:GetTestData}), ${2:DynamicDataSourceType.Method})]",
+		"public void ${3:TestMethod}($4) {",
+		"\t$5",
+		"} // End of $3"
+	  ],
+	  "description": "MSTest method with dynamic test data"
   },
   "MSTest test data": {
 	  "prefix": "msd",
