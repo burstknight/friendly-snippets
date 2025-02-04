@@ -40,6 +40,10 @@
                 "language": ["csharp", "cs"],
                 "path": "./snippets/csharp/csharp.json"
             },
+			{
+				"language": ["xml"],
+				"path": "./snippets/csharp/csproj.json"
+			},
             {
                 "language": "csharpdoc",
                 "path": "./snippets/csharp/csharpdoc.json"
