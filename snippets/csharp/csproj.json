@@ -1,0 +1,79 @@
+{
+	"csproject version": {
+		"prefix": "csp-ver",
+		"body": [
+			"<PropertyGroup>",
+			"\t<VersionPrefix>${1:0.1.0}</VersionPrefix>",
+			"\t<VersionSuffix>$2</VersionSuffix>",
+			"\t<AssemblyVersion>\\$(VersionPrefix)</AssemblyVersion>",
+			"\t<FileVersion>\\$(VersionPrefix)</FileVersion>",
+			"</PropertyGroup>"
+		],
+		"description": "Insert version properties for csproj file"
+	},
+	"Insert item group": {
+		"prefix": "csp-ig",
+		"body": [
+			"<ItemGroup>",
+			"\t$1",
+			"</ItemGroup>"
+		],
+		"description": "Insert item group for csproj file."
+	},
+	"Insert property group": {
+		"prefix": "csp-pg",
+		"body": [
+			"<PropertyGroup>",
+			"\t1",
+			"</PropertyGroup>"
+		],
+		"description": "Insert property group for csproj file."
+	},
+	"Include class library dll file": {
+		"prefix": "csp-scl",
+		"body": [
+			"<Reference Include=\"$1\">",
+			"\t<SpecificVersion>False</SpecificVersion>",
+			"\t<HintPath>$2</HintPath>",
+			"</Reference>"
+		],
+		"description": "Include class library dll file"
+	},
+	"Include c++ dll file": {
+		"prefix": "csp-dll",
+		"body": [
+			"<Content Include=\"$3\">",
+			"\t<CopyToOutputDirectory>Always</CopyToOutputDirectory>",
+			"\t<Pack>${1|True,False|}</Pack>",
+			"\t<PackagePath>${2:lib/\\$(TargetFramework)}</PackagePath>",
+			"</Content>"
+		],
+		"description": "Include c++ dll file."
+	},
+	"Add item": {
+		"prefix": "csp-item",
+		"body": [
+			"<None Include=\"$4\">",
+			"\t<Pack>${1|True,False|}</Pack>",
+			"\t<PackagePath>${2:/}</PackagePath>",
+			"\t<CopyToOutputDirectory>${3|Always,Never,PreserveNewest,IfDifferent|}</CopyToOutputDirectory>",
+			"</None>"
+		],
+		"description": "Add item"
+	},
+	"csproj nuget package": {
+		"prefix": "csp-nupck",
+		"body": [
+			"<PropertyGroup>",
+			"\t<PackageId>$1</PackageId>",
+			"\t<Authors>$2</Authors>",
+			"\t<Company>${3:\\$(Authors)}</Company>",
+			"\t<PackageTags>$4</PackageTags>",
+			"\t<Version>\\$(VersionPrefix)\\$(VersionSuffix)</Version>",
+			"\t<GenerateDocumentationFile>True</GenerateDocumentationFile>",
+			"\t<PackageReadmeFile>$3{README.md}</PackageReadmeFile>",
+			"</PropertyGroup>"
+		],
+		"description": "Insert nuget package properties for csproj file."
+	}
+}
