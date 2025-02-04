@@ -5,8 +5,8 @@
 			"<PropertyGroup>",
 			"\t<VersionPrefix>${1:0.1.0}</VersionPrefix>",
 			"\t<VersionSuffix>$2</VersionSuffix>",
-			"\t<AssemblyVersion>$(VersionPrefix)</AssemblyVersion>",
-			"\t<FileVersion>$(VersionPrefix)</FileVersion>",
+			"\t<AssemblyVersion>\\$(VersionPrefix)</AssemblyVersion>",
+			"\t<FileVersion>\\$(VersionPrefix)</FileVersion>",
 			"</PropertyGroup>"
 		],
 		"description": "Insert version properties for csproj file"
@@ -42,10 +42,10 @@
 	"Include c++ dll file": {
 		"prefix": "csp-dll",
 		"body": [
-			"<Content Include=\"$1\">",
+			"<Content Include=\"$3\">",
 			"\t<CopyToOutputDirectory>Always</CopyToOutputDirectory>",
-			"\t<Pack>${2|True,False|}</Pack>",
-			"\t<PackagePath>${3:lib/$(TargetFramework)}</PackagePath>",
+			"\t<Pack>${1|True,False|}</Pack>",
+			"\t<PackagePath>${2:lib/\\$(TargetFramework)}</PackagePath>",
 			"</Content>"
 		],
 		"description": "Include c++ dll file."
@@ -53,10 +53,10 @@
 	"Add item": {
 		"prefix": "csp-item",
 		"body": [
-			"<None Include=\"$1\">",
-			"\t<Pack>${2|True,False|}</Pack>",
-			"\t<PackagePath>${3:/}</PackagePath>",
-			"\t<CopyToOutputDirectory>${4|Always,Never,PreserveNewest,IfDifferent|}</CopyToOutputDirectory>",
+			"<None Include=\"$4\">",
+			"\t<Pack>${1|True,False|}</Pack>",
+			"\t<PackagePath>${2:/}</PackagePath>",
+			"\t<CopyToOutputDirectory>${3|Always,Never,PreserveNewest,IfDifferent|}</CopyToOutputDirectory>",
 			"</None>"
 		],
 		"description": "Add item"
@@ -67,13 +67,13 @@
 			"<PropertyGroup>",
 			"\t<PackageId>$1</PackageId>",
 			"\t<Authors>$2</Authors>",
-			"\t<Company>${3:$(Authors)}</Company>",
+			"\t<Company>${3:\\$(Authors)}</Company>",
 			"\t<PackageTags>$4</PackageTags>",
-			"\t<Version>$(VersionPrefix)$(VersionSuffix)</Version>",
+			"\t<Version>\\$(VersionPrefix)\\$(VersionSuffix)</Version>",
 			"\t<GenerateDocumentationFile>True</GenerateDocumentationFile>",
 			"\t<PackageReadmeFile>$3{README.md}</PackageReadmeFile>",
 			"</PropertyGroup>"
-		]
-	},
-	"description": "Insert nuget package properties for csproj file."
+		],
+		"description": "Insert nuget package properties for csproj file."
+	}
 }
