@@ -81,12 +81,20 @@
     },
     "Insert unordered list": {
         "prefix": "unordered list",
-        "body": ["- ${1:first}", "- ${2:second}", "- ${3:third}", "$0"],
+        "body": [
+			"- ${1:first}",
+			"- ${2:second}",
+			"- ${3:third}"
+		],
         "description": "Insert unordered list"
     },
     "Insert ordered list": {
         "prefix": "ordered list",
-        "body": ["1. ${1:first}", "2. ${2:second}", "3. ${3:third}", "$0"],
+        "body": [
+			"1. ${1:first}",
+			"2. ${2:second}",
+			"3. ${3:third}"
+		],
         "description": "Insert ordered list"
     },
     "Insert horizontal rule": {
@@ -96,12 +104,17 @@
     },
     "Insert task list": {
         "prefix": "task",
-        "body": ["- [${1| ,x|}] ${2:text}", "${0}"],
+        "body": [
+			"- [${1| ,x|}] ${2:text}"
+		],
         "description": "Insert task list"
     },
     "Insert task list 2": {
         "prefix": "task2",
-        "body": ["- [${1| ,x|}] ${2:text}", "- [${3| ,x|}] ${4:text}", "${0}"],
+        "body": [
+			"- [${1| ,x|}] ${2:text}",
+			"- [${3| ,x|}] ${4:text}"
+		],
         "description": "Insert task list with 2 tasks"
     },
     "Insert task list 3": {
@@ -109,8 +122,7 @@
         "body": [
             "- [${1| ,x|}] ${2:text}",
             "- [${3| ,x|}] ${4:text}",
-            "- [${5| ,x|}] ${6:text}",
-            "${0}"
+            "- [${5| ,x|}] ${6:text}"
         ],
         "description": "Insert task list with 3 tasks"
     },
@@ -120,8 +132,7 @@
             "- [${1| ,x|}] ${2:text}",
             "- [${3| ,x|}] ${4:text}",
             "- [${5| ,x|}] ${6:text}",
-            "- [${7| ,x|}] ${8:text}",
-            "${0}"
+            "- [${7| ,x|}] ${8:text}"
         ],
         "description": "Insert task list with 4 tasks"
     },
@@ -132,8 +143,7 @@
             "- [${3| ,x|}] ${4:text}",
             "- [${5| ,x|}] ${6:text}",
             "- [${7| ,x|}] ${8:text}",
-            "- [${9| ,x|}] ${10:text}",
-            "${0}"
+            "- [${9| ,x|}] ${10:text}"
         ],
         "description": "Insert task list with 5 tasks"
     },
