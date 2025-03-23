@@ -390,9 +390,9 @@
     "prefix": "try",
     "body": [
       "try {",
-      "\t$2",
-      "} catch (${1:System.Exception oEx}) {",
       "\t$3",
+      "} catch (${1:System.Exception oEx}) {",
+      "\t$2",
       "} // End of try-catch"
     ],
     "description": "Try catch"
@@ -487,18 +487,27 @@
   "Create an abstract Method": {
 	  "prefix": "abmth",
 	  "body": [
-		  "abstract public ${1:void} ${2:MyAbMeythod}();"
+		  "abstract public ${1:void} ${2:MyAbMeythod}($3);"
 	  ],
 	  "description": "Create an abstract method"
   },
   "Creates an Async Method structure": {
-    "prefix": "asmth",
+    "prefix": "astmth",
     "body": [
       "${1:public} async ${2:Task}<${3:object}> ${4:MyMethodAsync}(${5:string} ${6:parameter}) {",
       "\t$0",
       "} // End of $4"
     ],
     "description": "Creates an async Method structure"
+  },
+  "Create an Async Method without return value": {
+	  "prefix": "asvmth",
+	  "body": [
+		"${1:public} async void ${2:DoAsyncMethod}($3) {",
+		"\t$4",
+		"} // End of $2"
+	  ],
+	  "description": "Create an async method without return value"
   },
   "public class": {
     "prefix": "pcls",
@@ -508,6 +517,15 @@
       "} // End of class $2"
     ],
     "description": "Create new class"
+  },
+  "public abstract class": {
+	  "prefix": "abcls",
+	  "body": [
+		"public abstract class ${1:myAbClass} {",
+		"\t$2",
+		"} // End of class $1"
+	],
+	"description": "Create an abstract class"
   },
   "MSTest class": {
 	  "prefix": "msc",
