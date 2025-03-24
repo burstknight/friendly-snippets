@@ -4,7 +4,7 @@
 		"body": [
 			"<configuration>",
 			"\t<log4net>",
-			"\t\t",
+			"\t\t$1",
 			"\t</log4net>",
 			"</configuration>"
 		],
@@ -13,7 +13,7 @@
 	"log4net appender structure": {
 		"prefix": "l4g_appender",
 		"body": [
-			"<appender name=\"${1:MyAppender}\" type=\"${2|log4net.Appender.ConsoleAppender,log4net.Appender.RollingFileAppender,log4net.Appender.ManagedColoredConsoleAppender}\"",
+			"<appender name=\"${1:MyAppender}\" type=\"${2|log4net.Appender.ConsoleAppender,log4net.Appender.RollingFileAppender,log4net.Appender.ManagedColoredConsoleAppender|}\">",
 			"\t<threshold value=\"${3|All,Debug,Info,Error,Fatal|}\" />",
 			"\t$4",
 			"</appender>"
@@ -32,7 +32,7 @@
 	"log4net console appender": {
 		"prefix": "l4g_console",
 		"body": [
-			"<appender name=\"${1:ConsoleAppender}\" type=\"log4net.Appender.ConsoleAppender\"",
+			"<appender name=\"${1:ConsoleAppender}\" type=\"log4net.Appender.ConsoleAppender\">",
 			"\t<threshold value=\"${2|All,Debug,Info,Error,Fatal|}\" />",
 			"",
 			"\t<layout type=\"log4net.Layout.PatternLayout\">",
@@ -45,7 +45,7 @@
 	"log4net rolling file appender": {
 		"prefix": "l4g_rfa",
 		"body": [
-			"<appender name=\"${1:LogFileAppender}\" type=\"log4net.Appender.RollingFileAppender\"",
+			"<appender name=\"${1:LogFileAppender}\" type=\"log4net.Appender.RollingFileAppender\">",
 			"\t<threshold value=\"${2|All,Debug,Info,Error,Fatal|}\" />",
 			"",
 			"\t<file value=\"${3:logs/}\" />",
@@ -55,7 +55,7 @@
 			"\t<maximumFileSize value=\"${5:5MB}\" />",
 			"\t<staticLogFileName value=\"false\" />",
 			"\t<PreserveLogFileNameExtension value=\"true\" />",
-			"\t<rollingStyle value=\"$6{|Date,Once,Size,Compoiste|}\" />",
+			"\t<rollingStyle value=\"${6|Date,Once,Size,Compoiste|}\" />",
 			"",
 			"\t<layout type=\"log4net.Layout.PatternLayout\">",
 			"\t\t<conversionPattern value=\"${7:%date %level - %message%newline}\" />",
@@ -67,7 +67,7 @@
 	"log4net managed color console appender": {
 		"prefix": "l4g_mcca",
 		"body": [
-			"<appender name=\"${1:ManagedColorConsole}\" type=\"log4net.Appender.ManagedColoredConsoleAppender\"",
+			"<appender name=\"${1:ManagedColorConsole}\" type=\"log4net.Appender.ManagedColoredConsoleAppender\">",
 			"\t<threshold value=\"${2|All,Debug,Info,Error,Fatal|}\" />",
 			"",
 			"\t<mapping>",
@@ -90,7 +90,6 @@
 			"\t\t<level value=\"Debug\" />",
 			"\t\t<foreColor value=\"White\" />",
 			"\t</mapping>",
-			"\t<mapping>",
 			"",
 			"\t<layout type=\"log4net.Layout.PatternLayout\">",
 			"\t\t<conversionPattern value=\"${3:%date %level - %message%newline}\" />",
