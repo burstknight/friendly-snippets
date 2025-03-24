@@ -24,7 +24,7 @@
 		"prefix": "l4g_layout",
 		"body": [
 			"<layout type=\"log4net.Layout.PatternLayout\">",
-			"\t<conversionPattern value=\"${1:%date %level - %message%newline}\" />",
+			"\t<conversionPattern value=\"${1:[%date %5level] - %message%newline}\" />",
 			"</layout>"
 		],
 		"description": "Insert log4net layout structure"
@@ -36,7 +36,7 @@
 			"\t<threshold value=\"${2|All,Debug,Info,Error,Fatal|}\" />",
 			"",
 			"\t<layout type=\"log4net.Layout.PatternLayout\">",
-			"\t\t<conversionPattern value=\"${3:%date %level - %message%newline}\" />",
+			"\t\t<conversionPattern value=\"${3:[%date %5level] - %message%newline}\" />",
 			"\t</layout>",
 			"</appender>"
 		],
@@ -58,7 +58,7 @@
 			"\t<rollingStyle value=\"${6|Date,Once,Size,Compoiste|}\" />",
 			"",
 			"\t<layout type=\"log4net.Layout.PatternLayout\">",
-			"\t\t<conversionPattern value=\"${7:%date %level - %message%newline}\" />",
+			"\t\t<conversionPattern value=\"${7:[%date %5level] - %message%newline}\" />",
 			"\t</layout>",
 			"</appender>"
 		],
@@ -92,7 +92,7 @@
 			"\t</mapping>",
 			"",
 			"\t<layout type=\"log4net.Layout.PatternLayout\">",
-			"\t\t<conversionPattern value=\"${3:%date %level - %message%newline}\" />",
+			"\t\t<conversionPattern value=\"${3:[%date %5level] - %message%newline}\" />",
 			"\t</layout>",
 			"</appender>"
 		],
