@@ -24,7 +24,7 @@
 		"prefix": "csp-pg",
 		"body": [
 			"<PropertyGroup>",
-			"\t1",
+			"\t$1",
 			"</PropertyGroup>"
 		],
 		"description": "Insert property group for csproj file."
