@@ -75,5 +75,30 @@
 			"</PropertyGroup>"
 		],
 		"description": "Insert nuget package properties for csproj file."
+	},
+	"csproj target": {
+		"prefix": "csp-target",
+		"body": [
+			"<Target Name=\"${1:Coy files}\" AfterTargets=\"AfterBuild\">",
+			"\t$2",
+			"</Target>"
+		],
+		"description": "Insert target node"
+
+	},
+	"csproj target with condition": {
+		"prefix": "csp-target-condition",
+		"body": [
+			"<Target Name=\"${1:Coy files}\" AfterTargets=\"AfterBuild\" Condition=\"'\\$(Configuration)' == '${2|Debug,Release|}'\">",
+			"\t$3",
+			"</Target>"
+		]
+	},
+	"csproj copy": {
+		"prefix": "csp-cp",
+		"body": [
+			"<Copy SourceFiles=\"$1\" DestinationFolder=\"\\$(OutDir)${2:}\" />"
+		],
+		"description": "Insert copy node for target node"
 	}
 }
