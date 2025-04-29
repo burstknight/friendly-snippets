@@ -189,9 +189,9 @@
   "Interface": {
     "prefix": "interface",
     "body": [
-      "interface ${1:IMyInterface} {",
+      "${1:public} interface ${2:IMyInterface} {",
       "\t$0",
-      "} // End of interface $1"
+      "} // End of interface $2"
     ],
     "description": "Interface"
   },
@@ -268,10 +268,9 @@
   "Lock statement": {
     "prefix": "lock",
     "body": [
-      "lock (${1:this})",
-      "{",
+      "lock (${1:this}) {",
       "\t$0",
-      "}"
+      "} // End of lock"
     ],
     "description": "Lock statement"
   },
@@ -296,7 +295,7 @@
     "body": [
       "#if ${1:true}",
       "\t$0",
-      "#endif"
+      "#endif // End of $1"
     ],
     "description": "#if"
   },
@@ -305,7 +304,7 @@
     "body": [
       "#region ${1:Name}",
       "\t$0",
-      "#endregion"
+      "#endregion // End of $1"
     ],
     "description": "#region"
   },
@@ -419,30 +418,27 @@
   "Unchecked block": {
     "prefix": "unchecked",
     "body": [
-      "unchecked",
-      "{",
+      "unchecked {",
       "\t$0",
-      "}"
+      "} // End of unchecked"
     ],
     "description": "Unchecked block"
   },
   "Unsafe statement": {
     "prefix": "unsafe",
     "body": [
-      "unsafe",
-      "{",
+      "unsafe {",
       "\t$0",
-      "}"
+      "} // End of unsafe"
     ],
     "description": "Unsafe statement"
   },
   "Using statement": {
     "prefix": "using",
     "body": [
-      "using (${1:resource})",
-      "{",
+      "using (${1:resource}) {",
       "\t$0",
-      "}"
+      "} // End of using"
     ],
     "description": "Using statement"
   },
@@ -513,7 +509,7 @@
   "Creates an Async Method structure": {
     "prefix": "astmth",
     "body": [
-      "${1:public} async ${2:Task}<${3:object}> ${4:MyMethodAsync}(${5:string} ${6:parameter}) {",
+      "${1:public} async ${2:Task}<${3:object}> ${4:MyMethodAsync}($5) {",
       "\t$0",
       "} // End of $4"
     ],
@@ -522,7 +518,7 @@
   "Create an Async Method without return value": {
 	  "prefix": "asvmth",
 	  "body": [
-		"${1:public} async void ${2:DoAsyncMethod}($3) {",
+		"${1:public} async Task ${2:DoAsyncMethod}($3) {",
 		"\t$4",
 		"} // End of $2"
 	  ],
