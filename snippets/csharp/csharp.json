@@ -346,6 +346,16 @@
     ],
     "description": "int Main()"
   },
+  "asim": {
+	  "prefix": "asim",
+	  "body": [
+		  "static async Task<int> Main(string[] args) {",
+		  "\t$0",
+		  "\treturn 0;",
+		  "} // End of Main"
+	  ],
+	  "description": "async int Main()"
+  },
   "Struct": {
     "prefix": "struct",
     "body": [
@@ -363,6 +373,15 @@
       "} // End of Main"
     ],
     "description": "void Main()"
+  },
+  "asvm": {
+    "prefix": "asvm",
+    "body": [
+      "static async Task Main(string[] args) {",
+      "\t$0",
+      "} // End of Main"
+    ],
+    "description": "async void Main()"
   },
   "Switch statement": {
     "prefix": "switch",
