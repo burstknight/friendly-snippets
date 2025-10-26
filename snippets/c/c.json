@@ -18,7 +18,7 @@
             "",
             "int main(int argc, char** argv) {",
             "\t$0",
-            "\treturn EXIT_SUCCESS;",
+            "\treturn 0;",
             "} // End of main"
         ],
         "description": "Standard starter template for a tiny C program"
@@ -41,7 +41,7 @@
         "body": [
             "int main(int argc, char** argv) {",
             "\t$0",
-            "\treturn EXIT_SUCCESS;",
+            "\treturn 0;",
             "} // End of main"
         ],
         "description": "Standard main() snippet"
@@ -51,7 +51,7 @@
         "body": [
 			"int main(void) {",
 			"\t$1",
-			"\treturn EXIT_SUCCESS;",
+			"\treturn 0;",
 			"} // End of main"
 		],
         "description": "No-args main() snippet"
