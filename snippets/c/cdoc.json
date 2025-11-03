@@ -92,5 +92,12 @@
             "@fixme ${1:Text.}$0"
         ],
         "description": "Used to mark areas of the code that require fixing."
-    }
+    },
+	"@brief": {
+		"prefix": "@brief",
+		"body": [
+			"@brief ${1:A short description.}"
+		],
+		"description": "Insert a short description."
+	}
 }
