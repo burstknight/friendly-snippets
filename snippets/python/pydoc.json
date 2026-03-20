@@ -88,7 +88,7 @@
         "description": "A Python docstring for exceptions, including a one-line summary, description, and attributes."
     },
 	"argument header docstring": {
-		"prefix": "##args",
+		"prefix": "##Args",
 		"body": [
 			"Args:",
 			"\t${1:argument_name} (${2:type}): ${3:description.}"
@@ -98,12 +98,12 @@
 	"argument docstring": {
 		"prefix": "###arg",
 		"body": [
-			"\t${1:argument_name} (${2:type}): ${3:description.}"
+			"${1:argument_name} (${2:type}): ${3:description.}"
 		],
 		"description": "Insert argument docstring for function or method"
 	},
 	"return header docstring": {
-		"prefix": "##returns",
+		"prefix": "##Returns",
 		"body": [
             "Returns:",
             "\t${3:type}: {4:Description of the returned object.}"
