@@ -9,16 +9,6 @@
         "body": "# pyright: ignore[$0]",
         "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
     },
-    "Multiline string": {
-        "prefix": "#",
-        "body": ["\"\"\"$0", "\"\"\""],
-        "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
-    },
-    "One-line multiline string": {
-        "prefix": "##",
-        "body": "\"\"\"$0\"\"\"",
-        "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
-    },
     "self": {
         "prefix": "s",
         "body": "self.$0",
@@ -145,17 +135,8 @@
         "body": ["lambda ${1:parameter_list}: ${2:expression}"],
         "description": "lambda statement"
     },
-    "Function": {
-        "prefix": "def",
-        "body": [
-			"def ${1:fname}($2):",
-			"\t${3:pass}",
-			"# End of $1"
-		],
-        "description": "Function definition"
-    },
     "Function w/ return type": {
-        "prefix": "deft",
+        "prefix": "func",
         "body": [
 			"def ${1:fname}($2) -> ${3:None}:",
 			"\t${4:pass}",
@@ -193,19 +174,10 @@
         ],
         "description": "Class definition template"
     },
-    "Method": {
-        "prefix": "defm",
-        "body": [
-			"def ${1:mname}(self$2):",
-			"\t${3:pass}",
-			"# End of $1"
-		],
-        "description": "Class method definition"
-    },
     "Method w/ return type": {
-        "prefix": "defmt",
+        "prefix": "mth",
         "body": [
-			"def ${1:mname}(self$2) -> ${3:None}:",
+			"def ${1:method}(self$2) -> ${3:None}:",
 			"\t${4:pass}",
 			"# End of $1"
 		],
@@ -216,7 +188,9 @@
         "body": [
             "@property",
             "def ${1:pname}(self):",
-            "\t\"\"\"${2:The $1 property.}\"\"\"",
+            "\t\"\"\"",
+			"\t${2:The $1 property.}",
+			"\t\"\"\"",
             "\t${3:return self.__$1}",
 			"# End of $1(getter)",
             "",
@@ -229,12 +203,18 @@
     },
     "except": {
         "prefix": "except",
-        "body": ["except$1:", "\t${2:pass}"],
+        "body": [
+			"except$1:",
+			"\t${2:pass}"
+		],
         "description": "except statement"
     },
     "except as": {
         "prefix": "exceptas",
-        "body": ["except ${1:Exception} as ${2:e}:", "\t${3:raise $2}"],
+        "body": [
+			"except ${1:Exception} as ${2:e}:",
+			"\t${3:raise $2}"
+		],
         "description": "'except as' statement"
     },
     "try/except": {
