@@ -33,7 +33,7 @@
             "\t${5:argument_name} (${6:type}): ${7:description.}",
             "",
             "Returns:",
-            "\t${3:type}: {4:Description of the returned object.}",
+            "\t${3:type}: ${4:Description of the returned object.}",
             "\"\"\""
         ],
         "description": "Alternative Python docstring for functions and methods, with a different type syntax. Some teams prefer it."
@@ -131,6 +131,15 @@
             "    ${1:ErrorName}: ${2:Error description.}$0"
         ],
         "description": "A Python docstring for methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
-    }
+    },
+	"exaple docstring": {
+		"prefix": "##Example",
+		"body": [
+			"Example:",
+			"\t${1:Example description.}",
+			"\t${2:>>> func(a, b)}"
+		],
+		"description": "Insert example docstring for Python docstring."
+	}
 
 }
