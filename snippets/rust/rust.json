@@ -256,9 +256,9 @@
     "fn": {
         "prefix": "fn",
         "body": [
-            "fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {",
-            "    ${5:todo!();}",
-            "}"
+            "fn ${1:name}(${2}) -> ${3:RetType} {",
+			"\t",
+            "} // End of $1"
         ],
         "description": "fn …(…) { … }"
     },
