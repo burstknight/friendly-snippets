@@ -256,8 +256,8 @@
     "fn": {
         "prefix": "fn",
         "body": [
-            "fn ${1:name}(${2}) -> ${3:RetType} {",
-			"\t",
+            "fn ${1:name}(${2}) ${3:-> RetType }{",
+			"\t$4",
             "} // End of $1"
         ],
         "description": "fn …(…) { … }"
