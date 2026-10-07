@@ -249,15 +249,24 @@
         "body": [
             "pub fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {",
             "    ${5:todo!();}",
-            "}"
+            "} // End of $1"
         ],
         "description": "pub fn …(…) { … }"
+    },
+    "fn retype": {
+        "prefix": "fnr",
+        "body": [
+            "fn ${1:name}(${2}) -> ${3:RetType} {",
+			"\t$4",
+            "} // End of $1"
+        ],
+        "description": "fn …(…) -> RetType { … }"
     },
     "fn": {
         "prefix": "fn",
         "body": [
-            "fn ${1:name}(${2}) ${3:-> RetType }{",
-			"\t$4",
+            "fn ${1:name}(${2}) {",
+			"\t$3",
             "} // End of $1"
         ],
         "description": "fn …(…) { … }"
@@ -311,13 +320,17 @@
     },
     "main": {
         "prefix": "main",
-        "body": ["fn main() {", "    ${1:todo!();}", "}"],
+        "body": [
+			"fn main() {", 
+			"    ${1:todo!();}", 
+			"} // End of main"
+		],
         "description": "fn main() { … }"
     },
     "match": {
         "prefix": "match",
         "body": [
-            "match ${1:expr} {}"
+            "match ${1:expr} {$2}"
         ],
         "description": "match … { … }"
     },
