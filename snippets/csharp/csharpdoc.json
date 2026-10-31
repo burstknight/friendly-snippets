@@ -124,7 +124,7 @@
     "description": "This tag allows an entry to be generated for the See Also subclause. Use <see> to specify a link from within text."
   },
   "<summary>": {
-    "prefix": "@summary",
+    "prefix": "<sum",
     "body": [
       "<summary>",
 	  "/// ${1:description.}",
