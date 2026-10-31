@@ -1,13 +1,21 @@
 {
   "comment": {
-    "prefix": "///",
+    "prefix": "@doc",
     "body": [
       "/// <summary>",
       "/// ${1:What it does.}",
       "/// </summary>",
-      "/// <param name=\"${3:parameterName}\">${4:Parameter description.}</param>",
-      "/// <returns>${2:Type and description of the returned object.}</returns>",
-      "/// <example>${5:Write me later.}</example>$0"
+      "/// <param name=\"${3:parameterName}\">",
+	  "/// ${4:Parameter description.}",
+	  "/// </param>",
+	  "/// ",
+      "/// <returns>",
+	  "/// ${2:Type and description of the returned object.}",
+	  "/// </returns>",
+	  "/// ",
+      "/// <example>",
+	  "/// ${5:Write me later.}",
+	  "/// </example>$0"
     ],
     "description": "A C# comment with description, parameters, return, and example."
   },
@@ -116,9 +124,11 @@
     "description": "This tag allows an entry to be generated for the See Also subclause. Use <see> to specify a link from within text."
   },
   "<summary>": {
-    "prefix": "<summary>",
+    "prefix": "@summary",
     "body": [
-      "<summary>${1:description.}$0</summary>"
+      "<summary>",
+	  "/// ${1:description.}",
+	  "/// </summary>"
     ],
     "description": "This tag can be used to describe a type or a member of a type. Use <remarks> to describe the type itself."
   },
